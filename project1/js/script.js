@@ -8,15 +8,17 @@ window.addEventListener("load", () => {
     }, 100);
 });
 
-// Simple input focus animation
-const searchBox = document.querySelector("main input");
+// Input focus animation without breaking layouts
+const searchBox = document.querySelector(".hero-content input");
 
-searchBox.addEventListener("focus", () => {
-    searchBox.style.boxShadow = "0 0 10px rgba(226, 55, 68, 0.8)";
-    searchBox.style.transform = "translate(-50%, -50%) scale(1.03)";
-});
+if (searchBox) {
+    searchBox.addEventListener("focus", () => {
+        searchBox.style.boxShadow = "0 0 12px rgba(226, 55, 68, 0.8)";
+        searchBox.style.transform = "scale(1.02)";
+    });
 
-searchBox.addEventListener("blur", () => {
-    searchBox.style.boxShadow = "none";
-    searchBox.style.transform = "translate(-50%, -50%) scale(1)";
-});
+    searchBox.addEventListener("blur", () => {
+        searchBox.style.boxShadow = "none";
+        searchBox.style.transform = "scale(1)";
+    });
+}
